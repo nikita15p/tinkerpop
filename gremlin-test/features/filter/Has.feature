@@ -777,6 +777,15 @@ Feature: Step - has()
     When iterated to list
     Then the result should be empty
 
+  Scenario: g_V_hasXnull_testnullkeyX
+    Given the modern graph
+    And the traversal of
+    """
+    g.V().has(null, "test-null-key")
+    """
+    When iterated to list
+    Then the result should be empty
+
   Scenario: g_E_hasXnullX
     Given the modern graph
     And the traversal of
